@@ -1,0 +1,169 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef1"
+            },
+            "Name": "Add two numbers",
+            "Sample_Utterance__c": "Add two numbers",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerAddTwoNumbers",
+            "Pattern__c": "(?i)add two numbers"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef2"
+            },
+            "Name": "Find Account",
+            "Sample_Utterance__c": "Account united",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerFindAccount",
+            "Pattern__c": "(?i).*account ([A-Za-z0-9]*)"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef3"
+            },
+            "Name": "Find Contact",
+            "Sample_Utterance__c": "Contact jo",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerFindContact",
+            "Pattern__c": "(?i).*contact ([A-Za-z0-9]*)"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef4"
+            },
+            "Name": "Find Cost Center",
+            "Sample_Utterance__c": "My Cost Center",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerCostCenter",
+            "Pattern__c": "(?i).*cost center.*"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef5"
+            },
+            "Name": "Find Employee Id",
+            "Sample_Utterance__c": "My Employee Id",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerEmployeeId",
+            "Pattern__c": "(?i).*employee id.*"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef6"
+            },
+            "Name": "Hello",
+            "Sample_Utterance__c": "Hello",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerHello",
+            "Pattern__c": "(?i)hello"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef7"
+            },
+            "Name": "Help",
+            "Sample_Utterance__c": "Help",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerHelp",
+            "Pattern__c": "(?i)help"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef8"
+            },
+            "Name": "Help topic",
+            "Sample_Utterance__c": "Help Lightning",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerHelpTopic",
+            "Pattern__c": "(?i)help (.*)"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef9"
+            },
+            "Name": "My Open Cases",
+            "Sample_Utterance__c": "My Open Cases",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerMyOpenCases",
+            "Pattern__c": "(?i).*open cases.*"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef10"
+            },
+            "Name": "Next",
+            "Sample_Utterance__c": "What should I do next",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerNext",
+            "Pattern__c": "(?i)what.* next"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef11"
+            },
+            "Name": "Pipeline",
+            "Sample_Utterance__c": "My Pipeline",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerPipeline",
+            "Pattern__c": "(?i).*pipeline.*"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef12"
+            },
+            "Name": "Quarter",
+            "Sample_Utterance__c": "My Quarter",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerQuarter",
+            "Pattern__c": "(?i).*quarter.*"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef13"
+            },
+            "Name": "SOQL",
+            "Sample_Utterance__c": "SELECT Name FROM Contact LIMIT 5",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerSOQL",
+            "Pattern__c": "(?i)select.*"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef14"
+            },
+            "Name": "Top Opportunities",
+            "Sample_Utterance__c": "Top 3 opportunities",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerTopOpportunities",
+            "Pattern__c": "(?i).*top (\\d+) opportunities"
+        },
+        {
+            "attributes": {
+                "type": "Bot_Command__c",
+                "referenceId": "Bot_Command__cRef15"
+            },
+            "Name": "Travel Approval",
+            "Sample_Utterance__c": "Travel Approval",
+            "Active__c": true,
+            "Apex_Class__c": "HandlerTravelApproval",
+            "Pattern__c": "(?i)travel approval"
+        }
+    ]
+}

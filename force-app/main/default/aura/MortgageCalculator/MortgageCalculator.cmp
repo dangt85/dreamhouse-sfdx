@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForAllPageTypes"
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId"
                 access="global">
     
     <aura:attribute name="recordId" type="Id" />
@@ -10,8 +10,9 @@
                       recordUpdated="{!c.recordUpdated}"/>
 
     <aura:attribute name="principal" type="Integer" default="200000"/>
-    <aura:attribute name="years" type="Integer" default="30"/>
+    <aura:attribute name="years" type="Integer" default="25"/>
     <aura:attribute name="rate" type="Integer" default="5"/>
+    <aura:attribute name="downPayment" type="Integer" default="10000"/>
     <aura:attribute name="monthlyPayment" type="Decimal"/>
 
     <aura:registerEvent name="change" type="c:MortgageChange"/>
@@ -19,18 +20,24 @@
     <aura:handler name="change" value="{!v.principal}" action="{!c.calculateMonthlyPayment}"/>
     <aura:handler name="change" value="{!v.years}" action="{!c.calculateMonthlyPayment}"/>
     <aura:handler name="change" value="{!v.rate}" action="{!c.calculateMonthlyPayment}"/>
+    <aura:handler name="change" value="{!v.downPayment}" action="{!c.calculateMonthlyPayment}"/>
     <aura:handler name="init" value="{!this}" action="{!c.calculateMonthlyPayment}" />
 
 	<div>
+        <div class="slds-text-title">Mortgage Calculator (CDN)
+        </div>
         <div class="input">
-            <lightning:input aura:id="principal" type="number" label="Principal:" value="{!v.principal}"/>
-            <lightning:select name="select1" label="Years:" value="{!v.years}">
+            <lightning:input aura:id="principal" type="number" label="Purchase price ($):" value="{!v.principal}"/>
+            <lightning:input aura:id="downPayment" type="number" label="Down payment ($):" value="{!v.downPayment}"/>
+            <lightning:select name="years" label="Years:" value="{!v.years}">
+                <option value="10">10</option>
+                <option value="15">15</option>
                 <option value="20">20</option>
                 <option value="25">25</option>
                 <option value="30">30</option>
                 <option value="35">35</option>
     		</lightning:select>
-            <lightning:input aura:id="rate" type="text" label="Rate:" value="{!v.rate}"/>
+            <lightning:input aura:id="rate" type="text" label="Rate (%):" value="{!v.rate}"/>
         </div>
         <div class="result">
             Monthly Payment: 

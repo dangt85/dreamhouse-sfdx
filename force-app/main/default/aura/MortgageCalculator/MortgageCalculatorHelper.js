@@ -3,6 +3,11 @@
         // 1. Calculate monthly payment
         var principal = component.get("v.principal");
         var downPayment = component.get("v.downPayment");
+        if(!downPayment) {
+            downPayment = principal * 0.5;
+            component.set('v.downPayment', downPayment);
+        }
+
         var years = component.get("v.years");
         var rate = component.get("v.rate");
         var paymentFrequency = component.get('v.paymentFrequency');

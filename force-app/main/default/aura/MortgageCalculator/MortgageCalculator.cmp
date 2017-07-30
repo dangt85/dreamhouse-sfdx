@@ -12,7 +12,7 @@
     <aura:attribute name="principal" type="Integer" default="200000"/>
     <aura:attribute name="years" type="Integer" default="25"/>
     <aura:attribute name="rate" type="Integer" default="5"/>
-    <aura:attribute name="downPayment" type="Integer" default="10000"/>
+    <aura:attribute name="downPayment" type="Integer" />
     <aura:attribute name="paymentFrequency" type="String" default="Monthly"/>
     <aura:attribute name="cmhcPremium" type="Decimal"/>
     <aura:attribute name="downPercent" type="Decimal"/>

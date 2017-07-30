@@ -1,6 +1,8 @@
 <aura:component implements="flexipage:availableForAllPageTypes">
     
     <aura:attribute name="amortization" type="Object[]"/>
+    <aura:attribute name="principalTotal" type="Decimal" />
+    <aura:attribute name="interestTotal" type="Decimal" />
 
 	<aura:handler event="c:MortgageChange" action="{!c.mortgageChange}"/>
     
@@ -30,6 +32,15 @@
                 </tr>
             </aura:iteration>
         </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td><ui:outputCurrency value="{!v.principalTotal}" format="$#,###" /></td>
+                <td></td>
+                <td><ui:outputCurrency value="{!v.interestTotal}" format="$#,###" /></td>
+                <td></td>
+            </tr>
+        </tfoot>
     </table>
     
 </aura:component>

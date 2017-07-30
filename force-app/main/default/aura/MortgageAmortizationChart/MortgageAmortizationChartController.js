@@ -3,16 +3,37 @@
         var principal = event.getParam("principal");
         var years = event.getParam("years");
         var rate = event.getParam("rate");
-        var monthlyPayment = event.getParam("monthlyPayment");
-        var monthlyRate = rate / 100 / 12;
+        var paymentAmount = event.getParam("paymentAmount");
+        var paymentFrequency = event.getParam("paymentFrequency");
+
+        var frequency;
+        switch(paymentFrequency) {
+            case 'Weekly':
+                frequency = 52;
+                break;
+            case 'Rapid Weekly':
+                frequency = 12 * 4;
+                break;
+            case 'Bi-Weekly':
+                frequency = 52 / 2;
+                break;
+            case 'Rapid Bi-Weekly':
+                frequency = 12 * 2;
+                break;
+            default:
+                frequency = 12;
+                break;
+        }
+        var paymentRate = rate / 100 / frequency;
+
 	    var balance = principal;
     	var amortization = [];
         for (var y=0; y<years; y=y+1) {
             var interestY = 0;  //Interest payment for year y
             var principalY = 0; //Principal payment for year y
             for (var m=0; m<12; m=m+1) {
-                var interestM = balance * monthlyRate;       //Interest payment for month m
-                var principalM = monthlyPayment - interestM; //Principal payment for month m
+                var interestM = balance * paymentRate;       //Interest payment for month m
+                var principalM = paymentAmount - interestM; //Principal payment for month m
                 interestY = interestY + interestM;
                 principalY = principalY + principalM;
                 balance = balance - principalM;

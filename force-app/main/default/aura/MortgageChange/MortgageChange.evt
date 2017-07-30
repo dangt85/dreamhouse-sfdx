@@ -2,5 +2,6 @@
 	<aura:attribute name="principal" type="Decimal"/>
   	<aura:attribute name="years" type="Integer"/>
   	<aura:attribute name="rate" type="Decimal"/>
-  	<aura:attribute name="monthlyPayment" type="Decimal"/>
+  	<aura:attribute name="paymentAmount" type="Decimal"/>
+  	<aura:attribute name="paymentFrequency" type="String" default="Monthly"/>
 </aura:event>

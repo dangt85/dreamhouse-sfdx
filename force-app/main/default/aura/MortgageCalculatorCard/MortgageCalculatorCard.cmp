@@ -4,7 +4,7 @@
     <aura:attribute name="recordId" type="Id"/>
     
     <aura:attribute name="principal" type="Integer" default="200000"/>
-    <aura:attribute name="years" type="Integer" default="30"/>
+    <aura:attribute name="years" type="Integer" default="25"/>
     <aura:attribute name="rate" type="Integer" default="5"/>
     
     <lightning:card iconName="utility:chart" title="Mortgage Calculator">

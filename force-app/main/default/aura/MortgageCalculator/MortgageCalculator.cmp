@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+<aura:component implements="flexipage:availableForAllPageTypes"
                 access="global">
     
     <aura:attribute name="recordId" type="Id" />
@@ -13,7 +13,10 @@
     <aura:attribute name="years" type="Integer" default="25"/>
     <aura:attribute name="rate" type="Integer" default="5"/>
     <aura:attribute name="downPayment" type="Integer" default="10000"/>
-    <aura:attribute name="monthlyPayment" type="Decimal"/>
+    <aura:attribute name="paymentFrequency" type="String" default="Monthly"/>
+    <aura:attribute name="cmhcPremium" type="Decimal"/>
+    <aura:attribute name="downPercent" type="Decimal"/>
+    <aura:attribute name="paymentAmount" type="Decimal"/>
 
     <aura:registerEvent name="change" type="c:MortgageChange"/>
     
@@ -21,14 +24,15 @@
     <aura:handler name="change" value="{!v.years}" action="{!c.calculateMonthlyPayment}"/>
     <aura:handler name="change" value="{!v.rate}" action="{!c.calculateMonthlyPayment}"/>
     <aura:handler name="change" value="{!v.downPayment}" action="{!c.calculateMonthlyPayment}"/>
+    <aura:handler name="change" value="{!v.paymentFrequency}" action="{!c.calculateMonthlyPayment}"/>
+
     <aura:handler name="init" value="{!this}" action="{!c.calculateMonthlyPayment}" />
 
 	<div>
-        <div class="slds-text-title">Mortgage Calculator (CDN)
-        </div>
         <div class="input">
             <lightning:input aura:id="principal" type="number" label="Purchase price ($):" value="{!v.principal}"/>
             <lightning:input aura:id="downPayment" type="number" label="Down payment ($):" value="{!v.downPayment}"/>
+            (<lightning:formattedNumber value="{!v.downPercent}" style="percent" />)
             <lightning:select name="years" label="Years:" value="{!v.years}">
                 <option value="10">10</option>
                 <option value="15">15</option>
@@ -38,10 +42,20 @@
                 <option value="35">35</option>
     		</lightning:select>
             <lightning:input aura:id="rate" type="text" label="Rate (%):" value="{!v.rate}"/>
+            <lightning:select name="paymentFrequency" label="Payment Frequency:" value="{!v.paymentFrequency}">
+                <option value="Weekly">Weekly</option>
+                <option value="Rapid Weekly">Rapid Weekly</option>
+                <option value="Bi-Weekly">Bi-Weekly</option>
+                <option value="Rapid Bi-Weekly">Rapid Bi-Weekly</option>
+                <option value="Monthly">Monthly</option>
+            </lightning:select>
         </div>
         <div class="result">
-            Monthly Payment: 
-            <lightning:formattedNumber value="{!v.monthlyPayment}" style="currency" currencyCode="USD"/>
+            CMHC Premium:
+            <lightning:formattedNumber aura:id="cmhcPremium" value="{!v.cmhcPremium}" style="currency" currencyCode="USD"/><br/>
+            Payment amount: 
+            <lightning:formattedNumber value="{!v.paymentAmount}" style="currency" currencyCode="USD"/> / 
+            <ui:outputText value="{!v.paymentFrequency}" />
         </div>
     </div>    
     

@@ -1,13 +1,16 @@
 ({
-	calculateMonthlyPayment : function(component) {
-        // 1. Calculate monthly payment
+	calculateMonthlyPayment : function(component, event) {
+        // 1. Calculate payment
         var principal = component.get("v.principal");
-        var downPayment = component.get("v.downPayment");
-        if(!downPayment) {
-            downPayment = principal * 0.5;
+        var downPayment;
+        if($A.util.isUndefined(component.get("v.downPayment")) || $A.util.isEmpty(component.get("v.downPayment"))) {
+            downPayment = principal * 0.05;
+            event.stopPropagation();
             component.set('v.downPayment', downPayment);
+        } else {
+            downPayment = component.get("v.downPayment");
         }
-
+        
         var years = component.get("v.years");
         var rate = component.get("v.rate");
         var paymentFrequency = component.get('v.paymentFrequency');
@@ -67,13 +70,13 @@
             component.set("v.paymentAmount", paymentAmount);
     
             // 2. Fire event with new mortgage data
-            var event = $A.get("e.c:MortgageChange");
-            event.setParams({"principal": principal,
+            var mortgageChangeEvent = $A.get("e.c:MortgageChange");
+            mortgageChangeEvent.setParams({"principal": principal,
                              "years": years,
                              "rate": rate,
                              "paymentAmount": paymentAmount,
                              "paymentFrequency": paymentFrequency});
-            event.fire();
+            mortgageChangeEvent.fire();
         }
 	}
 })

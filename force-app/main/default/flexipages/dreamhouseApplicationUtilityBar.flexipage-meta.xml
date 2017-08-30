@@ -41,9 +41,14 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
+                <name>eager</name>
+                <type>decorator</type>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>height</name>
                 <type>decorator</type>
-                <value>320</value>
+                <value>510</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>icon</name>
@@ -66,18 +71,18 @@
             <componentInstanceProperties>
                 <name>scrollable</name>
                 <type>decorator</type>
-                <value>false</value>
+                <value>true</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>width</name>
                 <type>decorator</type>
-                <value>250</value>
+                <value>340</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>years</name>
-                <value>30</value>
+                <value>25</value>
             </componentInstanceProperties>
-            <componentName>MortgageCalculator</componentName>
+            <componentName>MortgageCalculatorCard</componentName>
         </componentInstances>
         <name>utilityItems</name>
         <type>Region</type>

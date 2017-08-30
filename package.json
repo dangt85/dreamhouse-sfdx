@@ -1,0 +1,26 @@
+{
+  "name": "dreamhouse-sfdx",
+  "version": "1.0.0",
+  "description": "DreamHouse is a sample application that demonstrates the unique value proposition of the Salesforce App Cloud for building Employee Productivity and Customer Engagement apps.",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3",
+    "gulp-zip": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangt85/dreamhouse-sfdx.git"
+  },
+  "author": "Daniel Gonzalez <dangt85@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dangt85/dreamhouse-sfdx/issues"
+  },
+  "homepage": "https://github.com/dangt85/dreamhouse-sfdx#readme"
+}
